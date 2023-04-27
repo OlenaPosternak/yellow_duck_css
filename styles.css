@@ -104,12 +104,49 @@
 }
 
 .label {
+  width: 93px;
+  height: 20px;
   font-size: 12px;
   padding: 1px 5px;
   position: absolute;
-  background-color: lightcoral;
+
   color: white;
   rotate: 45deg;
-  top: 22px;
-  right: -5px;
+  top: 23px;
+  right: -13px;
+}
+
+.lable_name {
+  z-index: 100;
+  position: absolute;
+  left: 20px;
+  top: 3px;
+}
+
+.label::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent transparent transparent lightcoral;
+  border-width: 0 0 20px 45px;
+  transform: skew(45deg);
+
+  background-color: lightcoral;
+}
+.label::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: lightcoral transparent transparent transparent;
+  border-width: 20px 70px 0 0;
+  transform: skew(-45deg);
+  background-color: lightcoral;
 }
